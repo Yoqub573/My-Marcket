@@ -1,0 +1,356 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.header h1 {
+  font-family: "Charm";
+}
+.header {
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff81;
+}
+.headDiv {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+.header a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #222222;
+}
+.header img {
+  width: 64px;
+  height: 59px;
+}
+.HomeProduct {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: #f1f5f8;
+}
+.HomeProduct h1 {
+  font-size: 25px;
+  color: #235275;
+  font-weight: 600;
+}
+.Search {
+  background-color: #f1f5f8;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+.Search::placeholder {
+  color: #235275;
+  font-size: 16px;
+  font-weight: 400;
+}
+.textDiv h3 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #222222;
+    margin-bottom: 15px;
+}
+.textDiv p {
+    color: #235275;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 10px;
+}
+.divInpRange label{
+    color: #222222;
+    font-size: 20px;
+    font-weight: 600;
+}
+.divProduct {
+    padding-left: 150px;
+    padding-right:150px ;
+    padding-top:   50px;
+    padding-bottom:50px ;
+    display: flex;
+    gap: 30px;
+}
+.divProducts {
+    text-align: center;
+    gap: 0px;
+}
+.NameProduct{
+    color: #00000061;
+    font-size: 16px;
+    font-weight: 700;
+}
+.Price {
+    font-weight: 700;
+    font-size: 16px;
+    color: #222222;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.divCnt{
+    position: absolute;
+    background-color: #BA5D2C;
+    color: #FFFFFF;
+    bottom: 45px;
+    left: 1355px;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    height: 22px;
+    align-items: center;
+    display: flex;
+}
+.btnAddCard{
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+.btnAddCard:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+.btnAddCard:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.btnAddCard:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #BA5D2C;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.btnAddCard:hover {
+  color: #ffffff;
+  border: 1px solid #dc6423;
+}
+
+.btnAddCard:hover:before {
+  top: -35%;
+  background-color: #a0491a;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.btnAddCard:hover:after {
+  top: -45%;
+  background-color: #d45612;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.DeleteAll{
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  outline: none;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+.DeleteAll:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+.DeleteAll:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.DeleteAll:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #BA5D2C;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.DeleteAll:hover {
+  color: #ffffff;
+  border: 1px solid #dc6423;
+}
+
+.DeleteAll:hover:before {
+  top: -35%;
+  background-color: #a0491a;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.DeleteAll:hover:after {
+  top: -45%;
+  background-color: #d45612;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.productDialog{
+  height: 1027px;
+  width: 420px;
+  margin-left: 70%;
+  border: none;
+  padding: 20px;
+  background-color: #F5F5F5;
+  outline: none;
+}
+.totalPrice {
+  font-family: 'Charm';
+  font-size: 24px;
+  font-weight: 700;
+}
+.bntCHECKOUT{
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left:  20px;
+  padding-right: 20px;
+  border: none;
+  background-color: #BA5D2C;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  outline: none;
+  border-radius: 4px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d0733c;
+  height: auto;
+  width: auto;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+}
+
+.title {
+  color: white;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.sub_title {
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 10px;
+}
+
+.form_style {
+  outline: none;
+  border: 2px solid #264143;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  width: 290px;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style:focus, .btn:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #E99F4C;
+}
+
+.btn {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 290px;
+  font-size: 15px;
+  background: #d45612;
+  border-radius: 10px;
+  font-weight: 800;
+  color: white;
+  box-shadow: 3px 3px 0px 0px #E99F4C;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+
+.SignDialog,.loginDialog{
+  background-color: #00000000;
+  border: none;
+  padding: 20px;
+  margin: auto;
+}

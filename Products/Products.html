@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Products.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Geist:wght@100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <dialog class="SignDialog">
+<div class="container">
+    <div class="form_area">
+        <p class="title">SIGN UP</p>
+        <form class="signForm">
+            <div class="form_group">
+                <label class="sub_title" for="name">Name</label>
+                <input placeholder="Enter your full name" name="inpName" class="form_style" type="text">
+            </div>
+            <div class="form_group">
+                <label class="sub_title" for="email">Email</label>
+                <input placeholder="Enter your email" id="email" name="inpEmail" class="form_style" type="email">
+            </div>
+            <div class="form_group">
+                <label class="sub_title" for="password">Password</label>
+                <input autocomplete="on" placeholder="Enter your password" name="inpPassword" class="form_style" type="password">
+            </div>
+            <div>
+                <button class="btn">SIGN UP</button>
+                <p>Have an Account? <a class="link">Login Here!</a></p><a class="link" href="">
+            </a></div><a class="link" href="">
+        
+    </a></form></div><a class="link" href="">
+</a></div>
+    </dialog>
+    <dialog class="loginDialog">
+<div class="container">
+    <div class="form_area">
+        <p class="title">LOGIN IN</p>
+        <form class="loginForm">
+            <div class="form_group">
+                <label class="sub_title" for="email">Email</label>
+                <input placeholder="Enter your email" name="inpLoginEmail" class="form_style" type="email">
+            </div>
+            <div class="form_group">
+                <label class="sub_title" for="password">Password</label>
+                <input autocomplete="on" placeholder="Enter your password" name="inpLoginPassword"  class="form_style" type="password">
+            </div>
+            <div>
+                <button class="btn">LOGIN IN</button>
+                <p>You haven't an Account? <a class="link2">Sign up Here!</a></p><a class="link" href="">
+            </a></div><a class="link" href="">
+        
+    </a></form></div><a class="link" href="">
+</a></div>
+    </dialog>
+    <header class="header">
+      <div class="headDiv">
+        <a href="/Home/HOME.html">
+          <p>Home</p>
+        </a>
+        <a href="./Products.html">
+          <p>Products</p>
+        </a>
+        <a href="/About/ABOUT.html">
+          <p>About</p>
+        </a>
+      </div>
+      <h1>comfy</h1>
+      <div class="showProduct">
+        <img src="./map_grocery-or-supermarket.svg" alt="" />
+        <div class="divCnt">
+          <p class="cnt">0</p>
+        </div>
+      </div>
+    </header>
+    <div class="HomeProduct">
+      <h1>Home / Products</h1>
+    </div>
+    <div class="divProduct">
+      <div>
+        <input type="text" class="Search" placeholder="Search..." />
+        <br />
+        <br /> 
+        <div class="textDiv">
+          <h3>Company</h3>
+          <p class="All">All</p>
+          <p class="Ikea">Ikea</p>
+          <p class="Marcos">Marcos</p>
+          <p class="Caressa">Caressa</p>
+          <p class="Liddy">Liddy</p>
+        </div>
+        <br />
+        <div class="divInpRange">
+          <label for="volume">Price</label>
+          <br>
+          <input
+            type="range"
+            id="volume"
+            class="inpRange"
+            min="6"
+            max="80"
+            value="80"
+          />
+        </div>
+
+        <p class="pValue">
+
+        </p>
+      </div>
+      <div class="box"></div>
+    </div>
+    <dialog class="productDialog">
+      <div style="display: flex;align-items: center;justify-content: space-between;">
+        <img src="./Frame 322.png" class="closeDialog" alt="">
+      </div>
+      <br>
+      <div style=" width: 100%;display: flex;justify-content: center;">
+        <h1 style="font-family: 'Charm';">
+          Your Bag
+        </h1>
+      </div>
+      <div class="box2"></div>
+      <div style="display: flex;justify-content: space-between;">
+        <p style="font-family: 'Charm';font-size: 24px;font-weight: 700;">Total:</p>
+        <p class="totalPrice"></p>
+      </div>
+      <a href=""></a>
+      <button class="bntCHECKOUT">CHECKOUT</button>
+    </dialog>
+    <script src="./Products.js"></script>
+  </body>
+</html>
