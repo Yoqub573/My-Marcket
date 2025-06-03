@@ -5,8 +5,6 @@ let api = "http://localhost:3000/data";
 let start = 0;
 let stop = 3;
 let data = null
-let cnt = document.querySelector(".cnt")
-cnt.innerHTML = JSON.parse(localStorage.getItem("data")).length
 async function get() {
   try {
     let res = await fetch(api);
@@ -17,30 +15,14 @@ async function get() {
   }
 }
 btnLeft.onclick = () => {
-  start--;
-  if(start<0){
-    data.forEach(e=>{
-      data.unshift(e)
-    })
-    getData(data)
-  }
-  stop--;
-  get();
-};
+  box.scrollBy({left:-420,behavior:"smooth"})
+}
 btnRight.onclick = () => {
-  start++;
-  stop++;
-  if (stop > 12) {
-    data.forEach(e =>{
-      data.push(e)
-    })
-    getData(data)
-  }
-  get();
-};
+  box.scrollBy({left:420,behavior:"smooth"})
+}
 function getData(data) {
   box.innerHTML = "";
-  data.slice(start, stop).forEach((e) => {
+  data.forEach((e) => {
     let div = document.createElement("div");
     div.classList.add("divProduct");
 

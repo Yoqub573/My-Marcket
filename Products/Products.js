@@ -6,51 +6,55 @@ let data3 = null;
 async function get2() {
   try {
     let res = await fetch(api2);
-    data3 = await res.json()
-    if(JSON.parse(localStorage.getItem("user")) == null){
-      SignDialog.showModal()
-    }else{
-      SignDialog.close()
+    data3 = await res.json();
+    if (JSON.parse(localStorage.getItem("user")) == null) {
+      SignDialog.showModal();
+    } else {
+      SignDialog.close();
     }
   } catch (error) {
     console.error(error);
   }
 }
-get2()
+get2();
 loginForm.onsubmit = async (event) => {
-  event.preventDefault()
+  event.preventDefault();
   try {
     let res = await fetch(api2);
-    data3 = await res.json()
-    data3.forEach(e => {
-      if(e.password.toString() == event.target["inpLoginPassword"].value.toString() && e.email.toString() == event.target["inpLoginEmail"].value.toString()){
-        localStorage.setItem("user",JSON.stringify(e))
-        loginDialog.close()
+    data3 = await res.json();
+    data3.forEach((e) => {
+      if (
+        e.password.toString() ==
+          event.target["inpLoginPassword"].value.toString() &&
+        e.email.toString() == event.target["inpLoginEmail"].value.toString()
+      ) {
+        localStorage.setItem("user", JSON.stringify(e));
+        loginDialog.close();
       }
-    })
+    });
   } catch (error) {
     console.error(error);
   }
-}
+};
 let inpRange = document.querySelector(".inpRange");
 let signForm = document.querySelector(".signForm");
 signForm.onsubmit = async (event) => {
-  event.preventDefault()
+  event.preventDefault();
   let newData = {
     name: event.target["inpName"].value,
     email: event.target["inpEmail"].value,
     password: event.target["inpPassword"].value,
     status: "User",
-    id:data3.length+1
+    id: data3.length + 1,
   };
   try {
     let res = await fetch(api2, {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body:JSON.stringify(newData)
-    })
-    localStorage.setItem("user",JSON.stringify(newData))
-    SignDialog.close()
+      body: JSON.stringify(newData),
+    });
+    localStorage.setItem("user", JSON.stringify(newData));
+    SignDialog.close();
   } catch (error) {
     console.error(error);
   }
@@ -60,7 +64,7 @@ let link = document.querySelector(".link");
 let loginDialog = document.querySelector(".loginDialog");
 link.onclick = () => {
   loginDialog.showModal();
-  SignDialog.close()
+  SignDialog.close();
 };
 let closeDialog = document.querySelector(".closeDialog");
 let link2 = document.querySelector(".link2");
@@ -254,9 +258,12 @@ function getData(data) {
     pPrice.innerHTML = `$${e.price}`;
     pPrice.classList.add("Price");
 
-    let dataS = JSON.parse(localStorage.getItem("user")) 
-    if(dataS.status.toString() == "User"){
-      let btnAddToCard = document.createElement("button");
+    let dataS = JSON.parse(localStorage.getItem("user"));
+    let btnAddToCard = document.createElement("button");
+    let btnInfo = document.createElement("button");
+    let btnDel = document.createElement("button")
+    let btnEdit = document.createElement("button")
+    if (dataS.status.toString() == "User") {
       btnAddToCard.innerHTML = "ADD TO CART";
       btnAddToCard.classList.add("btnAddCard");
       btnAddToCard.onclick = () => {
@@ -290,7 +297,6 @@ function getData(data) {
           getData2(data2);
         }
       };
-      let btnInfo = document.createElement("button");
       btnInfo.innerHTML = "ℹ";
       btnInfo.classList.add("btnAddCard");
       btnInfo.style.marginLeft = "10px";
@@ -299,6 +305,22 @@ function getData(data) {
         localStorage.setItem("id", JSON.stringify(e));
       };
     }
+    if (dataS.status.toString() == "Admin"){
+      btnDel.innerHTML = "✕"
+      btnDel.onclick =async()=>{
+        try {
+          let res = await fetch(`${api}/${e.id}`,{method:"DELETE"})
+          let data =  await res.json()
+          get()
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      btnEdit.innerHTML = 
+      btnEdit.onclick = async()=>{
+        
+      }
+    }
     div.append(
       imgProduct,
       document.createElement("br"),
@@ -306,10 +328,13 @@ function getData(data) {
       h1Name,
       document.createElement("br"),
       pPrice,
-      document.createElement("br"),
-    )
-    if(dataS.status.toString() == "User"){
-      div.append(btnAddToCard,btnInfo)
+      document.createElement("br")
+    );
+    if (dataS.status.toString() == "User") {
+      div.append(btnAddToCard, btnInfo);
+    }
+    if (dataS.status.toString() == "Admin"){
+      div.append(btnDel)
     }
     box.append(div);
   });

@@ -94,6 +94,8 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    max-width: 1250px;
+    overflow: hidden;
 }
 .divProduct{
     text-align: center;
